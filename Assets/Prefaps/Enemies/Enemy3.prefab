@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2030218957
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ee42ed66af73ba84fb3c2b06f0c83669, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.69}
+  m_Size: {x: 1.428571, y: 0.9942857}
   m_EdgeRadius: 0
 --- !u!50 &-1891581099251509613
 Rigidbody2D:
@@ -144,7 +144,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 5220227346190715554}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -180,4 +180,4 @@ MonoBehaviour:
   - {fileID: 4199713094389749314, guid: 73781559416d5194b8dfa1a95325c87a, type: 3}
   navigationUpdate: 0.01
   healthPoints: 300
-  rewardAmt: 2
+  rewardAmt: 15

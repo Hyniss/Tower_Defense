@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     private float navigationTime = 0;
     private bool isDead = false;
 
-    public bool IsDead { get { return isDead; } }
+    public bool IsDead { get => isDead; }
     // Start is called before the first frame update
     void Start()
     {
@@ -42,11 +42,11 @@ public class Enemy : MonoBehaviour
             {
                 if(target < wayPoints.Length)
                 {
-                    enemy.position = Vector2.MoveTowards(enemy.position, wayPoints[target].position, navigationTime);
+                    enemy.position = Vector2.MoveTowards(enemy.position, wayPoints[target].position,navigationTime);
                 }
                 else
                 {
-                    enemy.position = Vector2.MoveTowards(enemy.position, exitPoint.position,navigationTime);
+                    enemy.position = Vector2.MoveTowards(enemy.position, exitPoint.position, navigationTime);
                 }
                 navigationTime = 0;
             }
@@ -78,22 +78,24 @@ public class Enemy : MonoBehaviour
         {
             // hurt animation
             healthPoints -= hitpoints;
+            GameManager.Instance.AudioSource.PlayOneShot(SoundManager.Instance.Hit);
             anim.Play("Hurt");
 
         }
         else
         {
             //enemy die aniamtion
-            anim.SetTrigger("didDie");
             die();
         }
     }
     public void die()
     {
         isDead = true;
-        enemyCollider.enabled = false;
+		anim.SetTrigger("didDie");
+		enemyCollider.enabled = false;
         GameManager.Instance.TotalKilled += 1;
-        GameManager.Instance.addMoney(rewardAmt);
+		GameManager.Instance.AudioSource.PlayOneShot(SoundManager.Instance.Death);
+		GameManager.Instance.addMoney(rewardAmt);
         GameManager.Instance.isWaveOver();
     }
    
